@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Smart</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="page1" class="page active">
+    <div class="container">
+      <h1 class="title">Travel Smart</h1>
+      <button class="btn" onclick="showPage('loginPage')">Login</button>
+      <button class="btn" onclick="showPage('signupPage')">Sign Up</button>
+      <button class="btn" onclick="showPage('page2')">Guest</button>
+    </div>
+  </div>
+
+  <div id="loginPage" class="page">
+    <div class="container">
+      <h2>Login</h2>
+      <input type="text" placeholder="Username" class="input">
+      <input type="password" placeholder="Password" class="input">
+      <button class="btn" onclick="showPage('page2')">Login</button>
+      <button class="btn back" onclick="showPage('page1')">Back</button>
+    </div>
+  </div>
+
+  <div id="signupPage" class="page">
+    <div class="container">
+      <h2>Sign Up</h2>
+      <input type="text" placeholder="Username" class="input">
+      <input type="password" placeholder="Password" class="input">
+      <input type="email" placeholder="Email" class="input">
+      <button class="btn" onclick="showPage('page2')">Sign Up</button>
+      <button class="btn back" onclick="showPage('page1')">Back</button>
+    </div>
+  </div>
+
+  <div id="page2" class="page">
+    <div class="container">
+      <h2>Set Your Route</h2>
+      <input type="text" id="startPoint" placeholder="Enter start location" class="input">
+      <input type="text" id="endPoint" placeholder="Enter destination" class="input">
+      <button class="btn" onclick="setRoute()">Set Route</button>
+      <div id="map"></div>
+      <button class="btn" onclick="showPage('page3')">Let's Go</button>
+      <button class="btn back" onclick="showPage('page1')">Back</button>
+    </div>
+  </div>
+
+  <div id="page3" class="page">
+    <div class="container">
+      <h2>Set Alarm Distance</h2>
+      <input type="number" id="alarmDistance" placeholder="Distance in meters" class="input">
+      <button class="btn" onclick="startTracking()">Start</button>
+      <div id="feedback" class="feedback"></div>
+      <div id="weather" class="weather"></div>
+      <button class="btn back" onclick="showPage('page2')">Back</button>
+    </div>
+  </div>
+
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

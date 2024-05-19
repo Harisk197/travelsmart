@@ -1,0 +1,92 @@
+/* Define color variables for consistency */
+:root {
+  --dark-blue: #003366;
+  --sky-blue: #87CEEB;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--dark-blue);
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page.active {
+  display: flex;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(0, 51, 102, 0.8); /* Transparent background */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 36px;
+  font-family: 'Arial Black', sans-serif;
+  color: var(--white);
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: var(--white);
+  background-color: var(--sky-blue);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #6fbad7; /* Slightly darker shade of sky blue */
+}
+
+.btn.back {
+  background-color: #004488; /* Another shade of dark blue */
+  margin-top: 10px;
+}
+
+.btn.back:hover {
+  background-color: #003366; /* Original dark blue */
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.input {
+  padding: 10px;
+  font-size: 16px;
+  width: calc(100% - 22px);
+  margin: 10px 0;
+  border: 1px solid var(--sky-blue);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--white);
+}
+
+.input::placeholder {
+  color: var(--white);
+}
+
+.feedback, .weather {
+  margin-top: 20px;
+  color: var(--white);
+}
